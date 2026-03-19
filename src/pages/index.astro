@@ -1,0 +1,109 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="hero">
+				<div class="hero-content">
+					<div>
+						<h1>Brian Alvarado</h1>
+						<p class="hero-subtitle">Consultor IT · Factor IT · Chile</p>
+						<p class="hero-bio">
+							IT Consultant con 3 años en producción real para empresas enterprise en Chile.
+							Infraestructura, datos y cloud — con foco en seguir creciendo hacia arquitectura
+							y diseño de soluciones.
+						</p>
+					</div>
+					<img src="/brian.jpg" alt="Brian Alvarado" class="hero-photo" />
+				</div>
+			</div>
+
+			<span class="section-label">Clientes y proyectos</span>
+			<div class="card">
+				<div class="project-item">
+					<span class="project-client">Hortifruit</span>
+					<span class="project-desc">OpenMetadata en AWS / Docker</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Chec</span>
+					<span class="project-desc">IBM DataStage SaaS (Cloud Pak for Data)</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">BCI</span>
+					<span class="project-desc">IBM Information Server 11.7</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Claro</span>
+					<span class="project-desc">IBM Information Server multiversión</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Duoc UC</span>
+					<span class="project-desc">IBM IIS 11.7 + Power BI Gateway HA</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Entel</span>
+					<span class="project-desc">Apache NiFi y Splunk</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Porvenir</span>
+					<span class="project-desc">IBM IIS 11.7</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">CMF Chile</span>
+					<span class="project-desc">IBM Cognos</span>
+				</div>
+			</div>
+
+			<span class="section-label">Tecnologías</span>
+			<div class="card">
+				<div class="tag-group">
+					<strong>IBM</strong>
+					<span class="tag">DataStage</span><span class="tag">Cognos</span><span class="tag">IIDR</span><span class="tag">WebSphere</span><span class="tag">DB2</span><span class="tag">Cloud Pak for Data</span>
+				</div>
+				<div class="tag-group">
+					<strong>Cloud & OS</strong>
+					<span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Windows Server</span>
+				</div>
+				<div class="tag-group">
+					<strong>Datos & BI</strong>
+					<span class="tag">OpenMetadata</span><span class="tag">Apache NiFi</span><span class="tag">Splunk</span><span class="tag">Power BI</span><span class="tag">MySQL</span><span class="tag">Oracle</span>
+				</div>
+				<div class="tag-group">
+					<strong>Scripting</strong>
+					<span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">Python</span><span class="tag">SQL</span>
+				</div>
+			</div>
+
+			<span class="section-label">Certificaciones</span>
+			<div class="card">
+				<div class="project-item">
+					<span class="project-client">Microsoft Azure Fundamentals</span>
+					<span class="project-desc">AZ-900 · 2024</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Ultimate Linux</span>
+					<span class="project-desc">Hola Mundo · 2025</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client">Prompt Engineering</span>
+					<span class="project-desc">Hola Mundo</span>
+				</div>
+				<div class="project-item">
+					<span class="project-client" style="color: var(--text-muted)">En curso</span>
+					<span class="project-desc">AZ-104 · GCP Digital Leader · Docker · DevOps</span>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

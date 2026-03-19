@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main { width: 760px; }
+			section { display: flex; flex-direction: column; gap: 0; }
+			.post-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				padding: 1.2em 1.5em;
+				border-bottom: 1px solid var(--border);
+				text-decoration: none;
+				transition: background 0.2s;
+				border-radius: 8px;
+			}
+			.post-item:hover {
+				background: var(--bg-card);
+			}
+			.title {
+				margin: 0 0 0.3em 0;
+				color: var(--text);
+				font-size: 1em;
+				font-weight: 700;
+			}
+			.post-item:hover .title { color: var(--accent); }
+			.desc {
+				margin: 0;
+				color: var(--text-muted);
+				font-size: 0.88em;
+				line-height: 1.4;
+			}
+			.date {
+				margin: 0;
+				color: var(--text-muted);
+				font-size: 0.82em;
+				white-space: nowrap;
+				padding-left: 2em;
+				padding-top: 0.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<span class="section-label">Blog</span>
+			<section>
+				{
+					posts.map((post) => (
+						<a href={`/blog/${post.id}/`} class="post-item">
+							<div>
+								<h4 class="title">{post.data.title}</h4>
+								<p class="desc">{post.data.description}</p>
+							</div>
+							<p class="date">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+						</a>
+					))
+				}
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
