@@ -307,6 +307,11 @@ input { font-size: 16px; }
 	color: #0f1117;
 }
 
+.cta-email {
+	margin-top: 1em;
+	font-size: 0.9em;
+}
+
 @media (max-width: 720px) {
 	body { font-size: 16px; }
 	main { padding: 1.5em 1em; }
