@@ -153,6 +153,30 @@ main {
 	margin: 0;
 }
 
+.hero-stats {
+	display: flex;
+	gap: 2em;
+	margin-top: 1.5em;
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+}
+
+.stat-num {
+	font-size: 2em;
+	font-weight: 700;
+	color: var(--accent);
+	line-height: 1;
+}
+
+.stat-label {
+	font-size: 0.75em;
+	color: var(--text-muted);
+	margin-top: 0.2em;
+}
+
 .hero-photo {
 	width: 140px;
 	height: 140px;
@@ -256,9 +280,56 @@ hr {
 textarea { width: 100%; font-size: 16px; }
 input { font-size: 16px; }
 
+.cta-section {
+	text-align: center;
+	padding: 2em 0 1em 0;
+	color: var(--text-muted);
+}
+
+.cta-section p {
+	margin-bottom: 0.8em;
+	color: var(--text-muted);
+}
+
+.cta-btn {
+	display: inline-block;
+	background: var(--accent);
+	color: #0f1117;
+	font-weight: 700;
+	padding: 0.7em 1.8em;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: background 0.2s;
+}
+
+.cta-btn:hover {
+	background: var(--accent-dark);
+	color: #0f1117;
+}
+
 @media (max-width: 720px) {
 	body { font-size: 16px; }
 	main { padding: 1.5em 1em; }
+
+	.hero-content {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		gap: 1.5em;
+	}
+
+	.hero-photo {
+		width: 100px;
+		height: 100px;
+		align-self: center;
+	}
+
+	.hero-stats {
+		gap: 1.2em;
+	}
+
+	.stat-num {
+		font-size: 1.6em;
+	}
 }
 
 .sr-only {

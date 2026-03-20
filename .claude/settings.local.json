@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:www.ibm.com)"
+      "WebFetch(domain:www.ibm.com)",
+      "WebFetch(domain:adityacprtm.dev)"
     ]
   }
 }
